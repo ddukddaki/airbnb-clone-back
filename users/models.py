@@ -6,9 +6,11 @@ class User(AbstractUser):
     class GenderChoices(models.TextChoices):
         MALE = ("male", "Male")
         FEMALE = ("female", "Female")
+
     class LanguageChoices(models.TextChoices):
         KR = ("kr", "Korean")
         EN = ("en", "English")
+        
     class CurrencyChoices(models.TextChoices):
         WON = "won", "Korean Won"
         USD = "usd", "Dolloar"
@@ -21,3 +23,5 @@ class User(AbstractUser):
     gender = models.CharField(max_length=10, choices=GenderChoices.choices)
     language = models.CharField(max_length=2, choices=LanguageChoices.choices)
     currency = models.CharField(max_length=5, choices=CurrencyChoices.choices)
+    phone_nb = models.CharField(max_length=15, null=True)
+    

@@ -1,10 +1,27 @@
 from django.contrib import admin
 from .models import Photo, Video
 
+
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        "file",
+        "description",
+        "pk",
+    )
+
 
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
     pass
+
+# from django.contrib import admin
+# from .models import Photo, Video
+
+# @admin.register(Photo)
+# class PhotoAdmin(admin.ModelAdmin):
+#     pass
+
+# @admin.register(Video)
+# class VideoAdmin(admin.ModelAdmin):
+#     pass
