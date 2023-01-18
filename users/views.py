@@ -152,7 +152,7 @@ class GithubLogIn(APIView):
         try:
             code = request.data.get("code")
             access_token = requests.post(
-                f"https://github.com/login/oauth/access_token?code={code}&client_id=a4407c9526ed7cb93e46&client_secret={settings.GH_SECRET}",
+                f"https://github.com/login/oauth/access_token?code={code}&client_id=fa05a9ef062906b5a568&client_secret={settings.GH_SECRET}",
                 headers={"Accept": "application/json"},
             )
             access_token = access_token.json().get("access_token")
@@ -194,8 +194,8 @@ class KakaoLogIn(APIView):
                 headers={"Content-Type": "application/x-www-form-urlencoded"},
                 data={
                     "grant_type": "authorization_code",
-                    "client_id": "838e513b4de83049d01044f314a822d5",
-                    "redirect_uri": "https://dobbybnb.xyz/social/kakao",
+                    "client_id": "898280d2126c6a6a4ded6c15669ad04e",
+                    "redirect_uri": "https://hanpun.site/social/kakao",
                     "code": code,
                 },
             )
